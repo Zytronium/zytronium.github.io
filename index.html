@@ -10,7 +10,7 @@
     <meta name="description" content="Zytronium's developer website.">
     <meta property="og:title" content="About Zytronium">
     <meta property="og:description" content="Zytronium's developer website">
-<!--    <meta property="og:image" content="https://zytronium.github.io/stars/stars-scape-meta-img.png">-->
+    <!--    <meta property="og:image" content="https://zytronium.github.io/stars/stars-scape-meta-img.png">-->
     <meta property="og:type" content="website">
     <meta property="og:url" content="zytronium.github.io">
     <meta name="author" content="Zytronium">
@@ -19,25 +19,17 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Zytronium">
     <meta name="twitter:description" content="Zytronium's developer website">
-<!--    <meta name="twitter:image" content="">-->
+    <!--    <meta name="twitter:image" content="">-->
 
     <!-- ===== Background animation styling ===== -->
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100%;
             background: linear-gradient(to bottom, #060a11, #070c17);
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        html {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            height: 100%;
         }
 
         .stars {
@@ -46,7 +38,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            background: url('/images/stardust.png') repeat;
             z-index: -1;
         }
 
@@ -354,7 +346,6 @@
                 opacity: 0;
             }
         }
-
     </style>
 </head>
 <body>
@@ -394,20 +385,29 @@
 
 <!-- ===== Main Content ===== -->
 <div id="main-content">
-    <div class="spacer"></div>
-    <div class="spacer"></div>
-    <div class="spacer"></div>
     <header>
-        <h1>About Zytronium</h1>
+        <h1>Hello, <span style="text-decoration: line-through;"> World </span> Universe!</h1>
     </header>
     <main id="main-container">
         <section class="intro">
+            <h1>About Zytronium</h1>
             <img class="profile-picture" src="https://zytronium.github.io/Zytronium/images/zytronium_dev_logo.png"
                  alt="Zytronium Profile Picture" width="200" height="200">
             <p>
-                Welcome! I'm Zytronium, a passionate developer from Oklahoma who loves programming, space, and gaming.
+                Welcome to my personal developer website! I'm Zytronium, a passionate developer from Oklahoma who loves
+                programming, space, and gaming. This site serves as a home base for my projects, experiments, and
+                developer identity. I also plan host this site on a custom domain to use this website for other purposes
+                like hosting projects and using the domain for an email address.
             </p>
-            <p style="font-size: small">This website is a work-in-progress.</p>
+            <p>
+                I enjoy experimenting with building software and have worked on many personal projects from simple
+                experiments and tools to larger, more complex projects like my <em>Pycraft Rcon Bot</em>. I'm especially
+                interested in space, aviation, and logic-based programming challenges. My best fields of software
+                development are web development, mobile app development (Android Only), and Python scripting. I
+                especially enjoy creating small games. When I'm not working on a software project, I'm spending my
+                time flying radio-controlled model airplanes for fun. I'm also a licensed remote pilot and consider
+                myself to be somewhat skilled at graphic design, so I can fly a drone or create a logo for you if needed.
+            </p>
         </section>
         <section class="projects">
             <h2>My Projects</h2>
@@ -445,12 +445,13 @@
                 </div>
             </div>
         </section>
-        <footer>
-            <p>© 2025 Zytronium | <a href="https://github.com/zytronium">GitHub</a> | <a
-                    href="https://www.youtube.com/@Zytron">YouTube</a> | <a href="https://discord.gg/nMXxW5xVM4">Discord</a>
-            </p>
-        </footer>
     </main>
+    <p class="tiny-note">This website is a work-in-progress.</p>
+    <footer>
+        <p>© 2025 Zytronium | <a href="https://github.com/zytronium">GitHub</a> | <a
+                href="https://www.youtube.com/@Zytron">YouTube</a> | <a href="https://discord.gg/nMXxW5xVM4">Discord</a>
+        </p>
+    </footer>
 </div>
 
 <!-- Cosmic dust particles -->
@@ -511,9 +512,18 @@
     }
 
     // Spawns at random intervals
-    setInterval(createShootingStar, Math.random() * 20000 + 5000);
+    setInterval(createShootingStar, Math.random() * 20000 + 7500);
 </script>
 
+<!-- Fix footer overflowing slightly to the right on some browsers -->
+<script>
+    function adjustFooterWidth() {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.querySelector('footer').style.width = `calc(100vw - ${scrollbarWidth}px)`;
+    }
 
+    window.addEventListener('load', adjustFooterWidth);
+    window.addEventListener('resize', adjustFooterWidth);
+</script>
 </body>
 </html>
