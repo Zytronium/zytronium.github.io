@@ -71,6 +71,16 @@ header {
     height: 5rem;
 }
 
+.centered {
+    text-align: center;
+}
+
+
+.tiny-note {
+    font-size: small;
+    color: lightgray;
+}
+
 /* Background Animation */
 #background {
     position: fixed;
@@ -91,7 +101,7 @@ header {
 
 #main-container {
     background-color: rgba(10, 6, 29, 0.2);
-    max-width: 80vw;
+    max-width: 85vw;
     border-radius: 4rem;
     border: 2px solid #27234c;
     backdrop-filter: blur(13px);
@@ -102,6 +112,11 @@ header {
 header h1 {
     font-size: 2.75rem;
     margin-bottom: 1rem;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 
 /* Introduction Section */
@@ -130,11 +145,6 @@ header h1 {
 .projects {
     text-align: center;
     padding: 1em 2em 2em;
-}
-
-.projects h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
 }
 
 .projects h3 {
@@ -174,10 +184,13 @@ header h1 {
     color: #c5c6ca;
 }
 
-.tiny-note {
-    font-size: small;
+/* Contact Section */
+.contact {
+    padding: 1em 2em 2em;
+}
+
+.contact h2 {
     text-align: center;
-    color: lightgray;
 }
 
 /* Footer Styling */

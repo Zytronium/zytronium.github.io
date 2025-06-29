@@ -435,74 +435,89 @@
                 </div>
             </div>
         </section>
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>Message me on Discord: @zytronium | <a href="https://discord.gg/nMXxW5xVM4">discord.gg/nMXxW5xVM4</a></p>
+            <p>Email me: <a href="mailto:zytronium.dev.astronaut655@passinbox.com" target="_blank">zytronium.dev.astronaut655@passinbox.com</a></p>
+            <p class="tiny-note">
+                I don't wish for bots to start spamming my email, so the above email is a temporary alias that I change
+                whenever I start getting spam mail. This forwards directly to a special folder I created in my inbox.
+            </p>
+        </section>
     </main>
-    <p class="tiny-note">This website is a work-in-progress.</p>
+    <p class="tiny-note centered">This website is a work-in-progress.</p>
     <footer>
         <p>© 2025 Zytronium | <a href="https://github.com/zytronium">GitHub</a> | <a
                 href="https://www.youtube.com/@Zytron">YouTube</a> | <a href="https://discord.gg/nMXxW5xVM4">Discord</a>
         </p>
     </footer>
 </div>
-
+<script>
+    const USE_SCRIPTS = true; // temp debug thing
+</script>
 <!-- Cosmic dust particles -->
 <script>
-    function createDustParticles() {
-        const bg = document.getElementById('background');
-        const dust = document.createElement('div');
-        dust.classList.add('dust');
-        bg.appendChild(dust);
+    if (USE_SCRIPTS) {
+        function createDustParticles() {
+            const bg = document.getElementById('background');
+            const dust = document.createElement('div');
+            dust.classList.add('dust');
+            bg.appendChild(dust);
 
-        let top = Math.random() * 100;
-        let left = Math.random() * 100;
+            let top = Math.random() * 100;
+            let left = Math.random() * 100;
 
-        dust.style.top = `${top}vh`;
-        dust.style.left = `${left}vw`;
+            dust.style.top = `${top}vh`;
+            dust.style.left = `${left}vw`;
 
-        setTimeout(() => {
-            dust.remove();
-        }, 30000);
-    }
+            setTimeout(() => {
+                dust.remove();
+            }, 30000);
+        }
 
-    setInterval(createDustParticles, 500);
+        setInterval(createDustParticles, 500);
 
-    for (let i = 0; i < 40; i++) {
-        createDustParticles()
+        for (let i = 0; i < 40; i++) {
+            createDustParticles()
+        }
     }
 </script>
 
 <!-- JavaScript for shooting stars -->
 <script>
-    function randomColor() {
-        const hue = Math.floor(Math.random() * 360);
-        const saturation = Math.floor(Math.random() * 40) + 60; // 60–100%
-        const lightness = Math.floor(Math.random() * 30) + 60;  // 60–90%
-        return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    if (USE_SCRIPTS) {
+        function randomColor() {
+            const hue = Math.floor(Math.random() * 360);
+            const saturation = Math.floor(Math.random() * 40) + 60; // 60–100%
+            const lightness = Math.floor(Math.random() * 30) + 60;  // 60–90%
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
+        function createShootingStar() {
+            const bg = document.getElementById('background');
+            const shootingStar = document.createElement('div');
+            shootingStar.classList.add('shooting-star');
+            bg.appendChild(shootingStar);
+
+            let top = Math.random() * 75 - 25;
+            let left = Math.random() * 75 - 25;
+
+            shootingStar.style.top = `${top}vh`;
+            shootingStar.style.left = `${left}vw`;
+
+            const duration = Math.random() * 0.5 + 0.5;
+            shootingStar.style.animationDuration = `${duration}s`;
+
+            shootingStar.style.backgroundColor = randomColor();
+
+            setTimeout(() => {
+                shootingStar.remove();
+            }, duration * 1000);
+        }
+
+        // Spawns at random intervals
+        setInterval(createShootingStar, Math.random() * 20000 + 7500);
     }
-
-    function createShootingStar() {
-        const bg = document.getElementById('background');
-        const shootingStar = document.createElement('div');
-        shootingStar.classList.add('shooting-star');
-        bg.appendChild(shootingStar);
-
-        let top = Math.random() * 75 - 25;
-        let left = Math.random() * 75 - 25;
-
-        shootingStar.style.top = `${top}vh`;
-        shootingStar.style.left = `${left}vw`;
-
-        const duration = Math.random() * 0.5 + 0.5;
-        shootingStar.style.animationDuration = `${duration}s`;
-
-        shootingStar.style.backgroundColor = randomColor();
-
-        setTimeout(() => {
-            shootingStar.remove();
-        }, duration * 1000);
-    }
-
-    // Spawns at random intervals
-    setInterval(createShootingStar, Math.random() * 20000 + 7500);
 </script>
 
 <!-- Fix footer overflowing slightly to the right on some browsers -->
