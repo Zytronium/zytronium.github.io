@@ -4,353 +4,27 @@
     <meta charset="UTF-8">
     <title>About Zytronium</title>
 
+    <link rel="stylesheet" href="stars.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/zytronium_dev_logo_rounded.png" type="image/x-icon">
 
     <meta name="description" content="Zytronium's developer website.">
     <meta property="og:title" content="About Zytronium">
     <meta property="og:description" content="Zytronium's developer website">
-    <meta property="og:image" content="https://zytronium.github.io/zytronium_dev_logo_wallpaper.png">
+    <meta property="og:image" content="https://zytronium.dev/images/zytronium_dev_logo_wallpaper.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="zytronium.github.io">
+    <meta property="og:url" content="https://zytronium.dev/">
     <meta name="author" content="Zytronium">
-    <link rel="canonical" href="https://zytronium.github.io/">
+    <link rel="canonical" href="https://zytronium.dev/">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Zytronium">
     <meta name="twitter:description" content="Zytronium's developer website">
-    <meta name="twitter:image" content="https://zytronium.github.io/zytronium_dev_logo_wallpaper.png">
-
-    <!-- ===== Background animation styling ===== -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #060a11, #070c17);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('/images/stardust.png') repeat;
-            z-index: -1;
-        }
-
-        .nebula {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        .nebula::before, .nebula::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.7);
-            filter: blur(40px);
-            opacity: 0.15;
-            animation: nebulaAnimation 20s infinite;
-        }
-
-        .nebula .cloud {
-            position: absolute;
-            background: radial-gradient(circle, rgba(215, 0, 215, 0.15), rgba(0, 0, 0, 0.5));
-            filter: blur(60px);
-            opacity: 0.25;
-            border-radius: 50%;
-            animation: cloudAnimation 25s infinite;
-            box-shadow: 0px 0px 60px 20px rgba(201, 0, 201, 0.1),
-            0px 0px 80px 30px rgba(0, 241, 241, 0.15),
-            0px 0px 100px 40px rgba(0, 0, 0, 0.35);
-            transform: rotate(30deg);
-        }
-
-        @keyframes cloudAnimation {
-            0% {
-                transform: scale(1) rotate(0deg);
-                opacity: 0.7;
-            }
-            50% {
-                transform: scale(1.1) rotate(10deg);
-                opacity: 0.4;
-            }
-            100% {
-                transform: scale(1) rotate(-10deg);
-                opacity: 0.7;
-            }
-        }
-
-        @keyframes nebulaAnimation {
-            0% {
-                opacity: 0.8;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.6;
-                transform: scale(1.1);
-            }
-            100% {
-                opacity: 0.8;
-                transform: scale(1);
-            }
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            background-color: white;
-            animation: twinkle 1.5s infinite alternate;
-            opacity: 0.3;
-        }
-
-        @keyframes twinkle {
-            0% {
-                opacity: 0.1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.1;
-            }
-        }
-
-        .shooting-star {
-            position: absolute;
-            width: 350px;
-            height: 2px;
-            opacity: 0;
-            box-shadow: 0 0 8px currentColor;
-            animation: shootingStarAnimation 1s linear forwards;
-            transform-origin: left center;
-        }
-
-        /* Shooting star animation */
-        @keyframes shootingStarAnimation {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) rotate(45deg);
-                width: 0;
-                height: 2px;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(500px, 500px) rotate(45deg);
-                width: 350px;
-                height: 2px;
-            }
-        }
-
-        /* Random star positions with different animation durations */
-        .star:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            background-color: #ff0099;
-            animation-duration: 1.2s;
-            animation-delay: 0.5s;
-        }
-
-        .star:nth-child(2) {
-            top: 35%;
-            left: 80%;
-            background-color: #00b3ff;
-            animation-duration: 2.2s;
-            animation-delay: 0.1s;
-        }
-
-        .star:nth-child(3) {
-            top: 50%;
-            left: 60%;
-            background-color: #7400ff;
-            animation-duration: 2.5s;
-            animation-delay: 0.2s;
-        }
-
-        .star:nth-child(4) {
-            top: 70%;
-            left: 20%;
-            background-color: #ffcc00;
-            animation-duration: 1.8s;
-            animation-delay: 0.3s;
-        }
-
-        .star:nth-child(5) {
-            top: 80%;
-            left: 90%;
-            background-color: #33cc33;
-            animation-duration: 2.4s;
-            animation-delay: 0.4s;
-        }
-
-        .star:nth-child(6) {
-            top: 10%;
-            left: 40%;
-            background-color: #ff6600;
-            animation-duration: 3s;
-            animation-delay: 0.6s;
-        }
-
-        .star:nth-child(7) {
-            top: 60%;
-            left: 70%;
-            background-color: #00ffcc;
-            animation-duration: 1.3s;
-            animation-delay: 0.7s;
-        }
-
-        .star:nth-child(8) {
-            top: 15%;
-            left: 55%;
-            background-color: #ff0099;
-            animation-duration: 2.1s;
-            animation-delay: 0.2s;
-        }
-
-        .star:nth-child(9) {
-            top: 40%;
-            left: 85%;
-            background-color: #ff6600;
-            animation-duration: 2.7s;
-            animation-delay: 0.8s;
-        }
-
-        .star:nth-child(10) {
-            top: 25%;
-            left: 75%;
-            background-color: #ffcc00;
-            animation-duration: 1.6s;
-            animation-delay: 0.1s;
-        }
-
-        .star:nth-child(11) {
-            top: 50%;
-            left: 25%;
-            background-color: #00b3ff;
-            animation-duration: 2s;
-            animation-delay: 1s;
-        }
-
-        .star:nth-child(12) {
-            top: 66%;
-            left: 10%;
-            background-color: #9900cc;
-            animation-duration: 3.1s;
-            animation-delay: 1.2s;
-        }
-
-        .star:nth-child(13) {
-            top: 45%;
-            left: 15%;
-            background-color: #00ffcc;
-            animation-duration: 3.2s;
-            animation-delay: 0.4s;
-        }
-
-        .star:nth-child(14) {
-            top: 12%;
-            left: 65%;
-            background-color: #ff6600;
-            animation-duration: 1.9s;
-            animation-delay: 0.7s;
-        }
-
-        .star:nth-child(15) {
-            top: 75%;
-            left: 25%;
-            background-color: #7400ff;
-            animation-duration: 2.6s;
-            animation-delay: 1.1s;
-        }
-
-        .star:nth-child(16) {
-            top: 30%;
-            left: 90%;
-            background-color: #ff0099;
-            animation-duration: 2.0s;
-            animation-delay: 0.2s;
-        }
-
-        .star:nth-child(17) {
-            top: 55%;
-            left: 35%;
-            background-color: #ffcc00;
-            animation-duration: 2.8s;
-            animation-delay: 0.9s;
-        }
-
-        .star:nth-child(18) {
-            top: 65%;
-            left: 50%;
-            background-color: #00b3ff;
-            animation-duration: 1.5s;
-            animation-delay: 0.6s;
-        }
-
-        .star:nth-child(19) {
-            top: 20%;
-            left: 5%;
-            background-color: #9900cc;
-            animation-duration: 2.3s;
-            animation-delay: 0.5s;
-        }
-
-        .star:nth-child(20) {
-            top: 85%;
-            left: 70%;
-            background-color: #33cc33;
-            animation-duration: 3.5s;
-            animation-delay: 1.3s;
-        }
-
-        /* Cosmic dust particles effect */
-        .dust {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
-            animation: dustAnimation 30s infinite linear;
-        }
-
-        @keyframes dustAnimation {
-            0% {
-                transform: translate(0, 0);
-                opacity: 0.5;
-            }
-            50% {
-                transform: translate(5vmax, 5vmax);
-                opacity: 0.3;
-            }
-            75% {
-                transform: translate(7.5vmax, 7.5vmax);
-                opacity: 0.4;
-            }
-            90% {
-                transform: translate(9vmax, 9vmax);
-                opacity: 0.2;
-            }
-            100% {
-                transform: translate(10vmax, 10vmax);
-                opacity: 0;
-            }
-        }
-    </style>
+    <meta name="twitter:image" content="https://zytronium.dev/images/zytronium_dev_logo_wallpaper.png">
 </head>
 <body>
 
-<!-- ===== Background animation ===== -->
+<!-- ======== Background animation ======== -->
 <div id="background">
     <div class="stars"></div>
     <div class="nebula">
@@ -383,7 +57,7 @@
     <div class="star"></div>
 </div>
 
-<!-- ===== Main Content ===== -->
+<!-- ======== Main Content ======== -->
 <div id="main-content">
     <header>
         <h1>Hello, <span style="text-decoration: line-through;"> World </span> Universe!</h1>
@@ -452,9 +126,11 @@
         </p>
     </footer>
 </div>
+
 <script>
-    const USE_SCRIPTS = true; // temp debug thing
+    const USE_SCRIPTS = true; // temp debug thing; may let users change in the future
 </script>
+
 <!-- Cosmic dust particles -->
 <script>
     if (USE_SCRIPTS) {
@@ -483,7 +159,7 @@
     }
 </script>
 
-<!-- JavaScript for shooting stars -->
+<!-- Shooting Stars & Meteor Showers -->
 <script>
     if (USE_SCRIPTS) {
         function randomColor() {
@@ -515,8 +191,30 @@
             }, duration * 1000);
         }
 
-        // Spawns at random intervals
-        setInterval(createShootingStar, Math.random() * 20000 + 7500);
+        function startMeteorShower() {
+            const duration = Math.random() * 7000 + 3000; // 3s to 10s; constant for this shower
+            const rateRange = [25, 500]; // 0.025s to 0.5s; random for each star
+            const startTime = Date.now();
+
+            function shootStarDuringShower() {
+                // Repeat for the duration of `duration`
+                if (Date.now() - startTime < duration) {
+                    createShootingStar();
+                    setTimeout(shootStarDuringShower, Math.random() * (rateRange[1] - rateRange[0]) + rateRange[0]); // rateRange[0] (25ms) to rateRange[1] (500ms)
+                } else {
+                    // `duration` has ended. Schedule the next meteor shower.
+                    const MINUTE = 60000; // 60,000 ms; For readability
+                    setTimeout(startMeteorShower, Math.random() * (2 * MINUTE) + MINUTE); // 1m to 3m
+                }
+            }
+            shootStarDuringShower();
+        }
+
+        // Spawn a shooting star at random intervals from 10s to 30s
+        setInterval(createShootingStar, Math.random() * 20000 + 10000); // 10s to 30s
+
+        // Do a meteor shower every 1m to 3m, starting after 5s to 20s
+        setTimeout(startMeteorShower, Math.random() * 15000 + 5000); // 5s to 20s
     }
 </script>
 
