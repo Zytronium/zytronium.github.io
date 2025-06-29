@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Zytronium</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Zytronium's developer website.">
+    <meta property="og:title" content="About Zytronium">
+    <meta property="og:description" content="Zytronium's developer website">
+<!--    <meta property="og:image" content="https://zytronium.github.io/stars/stars-scape-meta-img.png">-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="zytronium.github.io">
+    <meta name="author" content="Zytronium">
+    <link rel="canonical" href="https://zytronium.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Zytronium">
+    <meta name="twitter:description" content="Zytronium's developer website">
+<!--    <meta name="twitter:image" content="">-->
+
+    <!-- ===== Background animation styling ===== -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: linear-gradient(to bottom, #060a11, #070c17);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        html {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            z-index: -1;
+        }
+
+        .nebula {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .nebula::before, .nebula::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            filter: blur(40px);
+            opacity: 0.15;
+            animation: nebulaAnimation 20s infinite;
+        }
+
+        .nebula .cloud {
+            position: absolute;
+            background: radial-gradient(circle, rgba(215, 0, 215, 0.15), rgba(0, 0, 0, 0.5));
+            filter: blur(60px);
+            opacity: 0.25;
+            border-radius: 50%;
+            animation: cloudAnimation 25s infinite;
+            box-shadow: 0px 0px 60px 20px rgba(201, 0, 201, 0.1),
+            0px 0px 80px 30px rgba(0, 241, 241, 0.15),
+            0px 0px 100px 40px rgba(0, 0, 0, 0.35);
+            transform: rotate(30deg);
+        }
+
+        @keyframes cloudAnimation {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.1) rotate(10deg);
+                opacity: 0.4;
+            }
+            100% {
+                transform: scale(1) rotate(-10deg);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes nebulaAnimation {
+            0% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background-color: white;
+            animation: twinkle 1.5s infinite alternate;
+            opacity: 0.3;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.1;
+            }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 350px;
+            height: 2px;
+            opacity: 0;
+            box-shadow: 0 0 8px currentColor;
+            animation: shootingStarAnimation 1s linear forwards;
+            transform-origin: left center;
+        }
+
+        /* Shooting star animation */
+        @keyframes shootingStarAnimation {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) rotate(45deg);
+                width: 0;
+                height: 2px;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(500px, 500px) rotate(45deg);
+                width: 350px;
+                height: 2px;
+            }
+        }
+
+        /* Random star positions with different animation durations */
+        .star:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            background-color: #ff0099;
+            animation-duration: 1.2s;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(2) {
+            top: 35%;
+            left: 80%;
+            background-color: #00b3ff;
+            animation-duration: 2.2s;
+            animation-delay: 0.1s;
+        }
+
+        .star:nth-child(3) {
+            top: 50%;
+            left: 60%;
+            background-color: #7400ff;
+            animation-duration: 2.5s;
+            animation-delay: 0.2s;
+        }
+
+        .star:nth-child(4) {
+            top: 70%;
+            left: 20%;
+            background-color: #ffcc00;
+            animation-duration: 1.8s;
+            animation-delay: 0.3s;
+        }
+
+        .star:nth-child(5) {
+            top: 80%;
+            left: 90%;
+            background-color: #33cc33;
+            animation-duration: 2.4s;
+            animation-delay: 0.4s;
+        }
+
+        .star:nth-child(6) {
+            top: 10%;
+            left: 40%;
+            background-color: #ff6600;
+            animation-duration: 3s;
+            animation-delay: 0.6s;
+        }
+
+        .star:nth-child(7) {
+            top: 60%;
+            left: 70%;
+            background-color: #00ffcc;
+            animation-duration: 1.3s;
+            animation-delay: 0.7s;
+        }
+
+        .star:nth-child(8) {
+            top: 15%;
+            left: 55%;
+            background-color: #ff0099;
+            animation-duration: 2.1s;
+            animation-delay: 0.2s;
+        }
+
+        .star:nth-child(9) {
+            top: 40%;
+            left: 85%;
+            background-color: #ff6600;
+            animation-duration: 2.7s;
+            animation-delay: 0.8s;
+        }
+
+        .star:nth-child(10) {
+            top: 25%;
+            left: 75%;
+            background-color: #ffcc00;
+            animation-duration: 1.6s;
+            animation-delay: 0.1s;
+        }
+
+        .star:nth-child(11) {
+            top: 50%;
+            left: 25%;
+            background-color: #00b3ff;
+            animation-duration: 2s;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(12) {
+            top: 66%;
+            left: 10%;
+            background-color: #9900cc;
+            animation-duration: 3.1s;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(13) {
+            top: 45%;
+            left: 15%;
+            background-color: #00ffcc;
+            animation-duration: 3.2s;
+            animation-delay: 0.4s;
+        }
+
+        .star:nth-child(14) {
+            top: 12%;
+            left: 65%;
+            background-color: #ff6600;
+            animation-duration: 1.9s;
+            animation-delay: 0.7s;
+        }
+
+        .star:nth-child(15) {
+            top: 75%;
+            left: 25%;
+            background-color: #7400ff;
+            animation-duration: 2.6s;
+            animation-delay: 1.1s;
+        }
+
+        .star:nth-child(16) {
+            top: 30%;
+            left: 90%;
+            background-color: #ff0099;
+            animation-duration: 2.0s;
+            animation-delay: 0.2s;
+        }
+
+        .star:nth-child(17) {
+            top: 55%;
+            left: 35%;
+            background-color: #ffcc00;
+            animation-duration: 2.8s;
+            animation-delay: 0.9s;
+        }
+
+        .star:nth-child(18) {
+            top: 65%;
+            left: 50%;
+            background-color: #00b3ff;
+            animation-duration: 1.5s;
+            animation-delay: 0.6s;
+        }
+
+        .star:nth-child(19) {
+            top: 20%;
+            left: 5%;
+            background-color: #9900cc;
+            animation-duration: 2.3s;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(20) {
+            top: 85%;
+            left: 70%;
+            background-color: #33cc33;
+            animation-duration: 3.5s;
+            animation-delay: 1.3s;
+        }
+
+        /* Cosmic dust particles effect */
+        .dust {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+            animation: dustAnimation 30s infinite linear;
+        }
+
+        @keyframes dustAnimation {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(5vmax, 5vmax);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translate(7.5vmax, 7.5vmax);
+                opacity: 0.4;
+            }
+            90% {
+                transform: translate(9vmax, 9vmax);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(10vmax, 10vmax);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ===== Background animation ===== -->
+<div id="background">
+    <div class="stars"></div>
+    <div class="nebula">
+        <div class="cloud" style="top: 20%; left: 30%; width: 40%; height: 40%; animation-duration: 18s;"></div>
+        <div class="cloud" style="top: 50%; left: 70%; width: 30%; height: 30%; animation-duration: 22s;"></div>
+        <div class="cloud" style="top: 10%; left: 50%; width: 25%; height: 25%; animation-duration: 20s;"></div>
+        <div class="cloud" style="top: 70%; left: 80%; width: 35%; height: 35%; animation-duration: 17s;"></div>
+        <div class="cloud" style="top: 40%; left: 10%; width: 50%; height: 50%; animation-duration: 25s;"></div>
+    </div>
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+</div>
+
+<!-- ===== Main Content ===== -->
+<div id="main-content">
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <header>
+        <h1>About Zytronium</h1>
+    </header>
+    <main id="main-container">
+        <section class="intro">
+            <img class="profile-picture" src="https://zytronium.github.io/Zytronium/images/zytronium_dev_logo.png"
+                 alt="Zytronium Profile Picture" width="200" height="200">
+            <p>
+                Welcome! I'm Zytronium, a passionate developer from Oklahoma who loves programming, space, and gaming.
+            </p>
+            <p style="font-size: small">This website is a work-in-progress.</p>
+        </section>
+        <section class="projects">
+            <h2>My Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3><a href="https://thefactionnexus.tech/about">The Faction Nexus</a></h3>
+                    <p>A hub for Starscape factions and its community.</p>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://zytronium.github.io/atlas-hack_sprint_adventure/">Astralis</a></h3>
+                    <p>A sci-fi text adventure game where you have to save your universe. It can be played both on the
+                        website and through an Android mobile app.</p>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://play.google.com/store/apps/details?id=com.zytronium.a8bitracing">Infinite 8-Bit
+                        Racing</a></h3>
+                    <p>A mobile racing game with an 8-bit theme where you dodge the slower racers.</p>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://play.google.com/store/apps/details?id=com.zytronium.CodeMaze">Code Maze</a>
+                    </h3>
+                    <p>A mobile game with many gamemodes where you navigate mazes, avoid issues, and collect optimizers
+                        to win. It was my first large coding project.</p>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://github.com/Zytronium/dad.exe/releases/tag/v1.1.0-milk">Dad.exe</a></h3>
+                    <p>Dad leaves to "get the milk," but takes his time. The original was made with Kotlin, but there is
+                        a <a href="https://github.com/Zytronium/dad">slightly better version</a> remade in C and a <a
+                                href="https://github.com/Zytronium/dad_exe_2">sequel</a> also made in C.</p>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://zytronium.itch.io/wormhole-2-infinity">Wormhole to Infinity</a></h3>
+                    <p>Fly through a wormhole with colorful rings manually placed to roughly match the beat of the
+                        Stranger Things C418 remix that plays.</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>© 2025 Zytronium | <a href="https://github.com/zytronium">GitHub</a> | <a
+                    href="https://www.youtube.com/@Zytron">YouTube</a> | <a href="https://discord.gg/nMXxW5xVM4">Discord</a>
+            </p>
+        </footer>
+    </main>
+</div>
+
+<!-- Cosmic dust particles -->
+<script>
+    function createDustParticles() {
+        const bg = document.getElementById('background');
+        const dust = document.createElement('div');
+        dust.classList.add('dust');
+        bg.appendChild(dust);
+
+        let top = Math.random() * 100;
+        let left = Math.random() * 100;
+
+        dust.style.top = `${top}vh`;
+        dust.style.left = `${left}vw`;
+
+        setTimeout(() => {
+            dust.remove();
+        }, 30000);
+    }
+
+    setInterval(createDustParticles, 500);
+
+    for (let i = 0; i < 40; i++) {
+        createDustParticles()
+    }
+</script>
+
+<!-- JavaScript for shooting stars -->
+<script>
+    function randomColor() {
+        const hue = Math.floor(Math.random() * 360);
+        const saturation = Math.floor(Math.random() * 40) + 60; // 60–100%
+        const lightness = Math.floor(Math.random() * 30) + 60;  // 60–90%
+        return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    }
+
+    function createShootingStar() {
+        const bg = document.getElementById('background');
+        const shootingStar = document.createElement('div');
+        shootingStar.classList.add('shooting-star');
+        bg.appendChild(shootingStar);
+
+        let top = Math.random() * 75 - 25;
+        let left = Math.random() * 75 - 25;
+
+        shootingStar.style.top = `${top}vh`;
+        shootingStar.style.left = `${left}vw`;
+
+        const duration = Math.random() * 0.5 + 0.5;
+        shootingStar.style.animationDuration = `${duration}s`;
+
+        shootingStar.style.backgroundColor = randomColor();
+
+        setTimeout(() => {
+            shootingStar.remove();
+        }, duration * 1000);
+    }
+
+    // Spawns at random intervals
+    setInterval(createShootingStar, Math.random() * 20000 + 5000);
+</script>
+
+
+</body>
+</html>
