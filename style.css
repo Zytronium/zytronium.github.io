@@ -101,16 +101,18 @@ header {
 /* Main Header */
 header h1 {
     font-size: 2.75rem;
+    margin-bottom: 1rem;
 }
 
 /* Introduction Section */
 .intro {
     text-align: center;
-    margin: 20px;
+    margin: 5px;
 }
 
 .intro h1 {
     font-size: 2.25rem;
+    margin-bottom: 0;
 }
 
 .profile-picture {
@@ -181,8 +183,8 @@ header h1 {
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 1em 0;
-    font-size: 0.7em;
+    padding: 0.333em 0;
+    font-size: 0.8em;
     background-color: #0a092d;
     color: #888;
     width: calc(100vw - 14px);
