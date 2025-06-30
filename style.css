@@ -12,25 +12,9 @@ header {
     text-align: center;
     padding: 1em 0;
 }
-
-@font-face {
-    font-family: 'Exo2';
-    src: url('/fonts/Exo2-VariableFont_wght.ttf');
-}
-
-@font-face {
-    font-family: 'Oxanium';
-    src: url('/fonts/Oxanium-VariableFont_wght.ttf');
-}
-
 @font-face {
     font-family: 'Quantico';
     src: url('/fonts/Quantico-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Xolonium';
-    src: url('/fonts/Xolonium-Regular.otf');
 }
 
 /* Scrollbar track */
