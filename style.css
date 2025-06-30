@@ -142,47 +142,105 @@ section h2 {
 }
 
 /* Projects Section */
-.projects {
+#portfolio {
     text-align: center;
     padding: 1em 2em 2em;
 }
 
-.projects h3 {
-    font-size: 1.4em;
-    margin-top: 0.2em;
+#portfolio p {
+    color: #c4c4c4;
+    margin-bottom: 1em;
+    font-size: 0.9em;
 }
 
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
+#portfolio > p {
+    margin: 20px 10%;
+}
+
+#portfolio .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    gap: 25px;
     justify-content: center;
-    gap: 20px;
+    align-items: stretch;
 }
 
-.project-item {
-    background-color: #141333;
-    padding: 15px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+#portfolio .project-card {
+    background-color: #12102d;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
-.project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+#portfolio .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-item h3 a {
-    color: #e2c14a;
-    text-decoration: none;
+#portfolio .project-card:has(img.zoomed):hover {
+    transform: none;
+    box-shadow: none;
 }
 
-.project-item p {
-    margin-top: 10px;
-    font-size: 1em;
+#portfolio .project-card img {
+    cursor: zoom-in;
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+    object-fit: cover;
+}
+
+#portfolio .project-card img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+    background: rgba(72, 72, 72, 0.3);
+    border-radius: 10px;
+}
+
+#portfolio .project-card h3 {
+    color: #e4be32;
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+#portfolio .project-card p {
     color: #c5c6ca;
+    flex-grow: 1;
+    font-size: 0.95em;
+    margin-bottom: 1rem;
+    text-align: start;
 }
+
+#portfolio .project-card .links {
+    font-size: 0.9em;
+}
+
+#portfolio .project-card .links a {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#portfolio .project-card .links a:hover {
+    text-decoration: underline;
+}
+
 
 /* Contact Section */
 .contact {
