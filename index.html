@@ -257,17 +257,11 @@
             <h2>Contact Me</h2>
             <p>To reveal my contact information, please confirm you are not a bot.</p>
             <div class="h-captcha"
-                 data-sitekey="your-hcaptcha-site-key"
+                 data-sitekey="9826ed50-ee58-44ba-82c4-07b62424ff2a"
                  data-callback="onCaptchaSuccess"
                  data-theme="dark">
             </div>
-            <p>Message me on Discord: @zytronium | <a href="https://discord.gg/nMXxW5xVM4">discord.gg/nMXxW5xVM4</a></p>
-            <p>Email me: <a href="mailto:zytronium.dev.astronaut655@passinbox.com" target="_blank">zytronium.dev.astronaut655@passinbox.com</a></p>
-            <p class="tiny-note">
-                Modern bots can pass captcha challenges too. I don't wish for bots to start spamming my email, so the
-                above email is a temporary alias that I change whenever I start getting spam mail. This forwards
-                directly to a special folder I created in my inbox. I will ignore your email if I think it's spam.
-            </p>
+            <div id="contact-info"></div>
         </section>
     </main>
     <p class="tiny-note centered">This website is a work-in-progress.</p>
@@ -278,6 +272,29 @@
     </footer>
     <div id="zoomOverlay"></div>
 </div>
+
+<!-- Captcha -->
+<script>
+    function onCaptchaSuccess(token) {
+        fetch('/reveal-contact.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ token })
+        })
+                .then(res => res.json())
+                .then(data => {
+                    const contactBox = document.getElementById('contact-info');
+                    if (data.success) {
+                        contactBox.innerHTML = data.contact;
+                    } else {
+                        contactBox.innerText =
+                                'CAPTCHA failed. This means that either you ' +
+                                'are a robot, or you are only human.';
+                    }
+                });
+    }
+</script>
+
 
 <script>
     const USE_SCRIPTS = true; // temp debug thing; may let users change in the future
