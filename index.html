@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stars.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/zytronium_dev_logo_rounded.png" type="image/x-icon">
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <script src="index.js"></script>
     <script src="img_zoom.js"></script>
 
@@ -254,11 +255,18 @@
         </section>
         <section class="contact">
             <h2>Contact Me</h2>
+            <p>To reveal my contact information, please confirm you are not a bot.</p>
+            <div class="h-captcha"
+                 data-sitekey="your-hcaptcha-site-key"
+                 data-callback="onCaptchaSuccess"
+                 data-theme="dark">
+            </div>
             <p>Message me on Discord: @zytronium | <a href="https://discord.gg/nMXxW5xVM4">discord.gg/nMXxW5xVM4</a></p>
             <p>Email me: <a href="mailto:zytronium.dev.astronaut655@passinbox.com" target="_blank">zytronium.dev.astronaut655@passinbox.com</a></p>
             <p class="tiny-note">
-                I don't wish for bots to start spamming my email, so the above email is a temporary alias that I change
-                whenever I start getting spam mail. This forwards directly to a special folder I created in my inbox.
+                Modern bots can pass captcha challenges too. I don't wish for bots to start spamming my email, so the
+                above email is a temporary alias that I change whenever I start getting spam mail. This forwards
+                directly to a special folder I created in my inbox. I will ignore your email if I think it's spam.
             </p>
         </section>
     </main>
