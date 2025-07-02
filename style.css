@@ -251,6 +251,7 @@ footer {
     background-color: #0a092d;
     color: #888;
     width: calc(100vw - 14px);
+    margin-top: 2.5rem;
 }
 
 a {
