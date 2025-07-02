@@ -285,7 +285,18 @@
                 .then(data => {
                     const contactBox = document.getElementById('contact-info');
                     if (data.success) {
-                        contactBox.innerHTML = data.contact;
+                        contactBox.innerHTML = data.fake;
+
+                        const delay = 350 + Math.random() * 300;
+                        setTimeout(() => {
+                            contactBox.style.filter = 'blur(5px)';
+                            setTimeout(() => {
+                                contactBox.innerHTML = data.real;
+                                setTimeout(() => {
+                                    contactBox.style.filter = '';
+                                }, 150)
+                            }, 150)
+                        }, delay);
                     } else {
                         contactBox.innerText =
                                 'CAPTCHA failed. This means that either you ' +
@@ -294,7 +305,6 @@
                 });
     }
 </script>
-
 
 <script>
     const USE_SCRIPTS = true; // temp debug thing; may let users change in the future

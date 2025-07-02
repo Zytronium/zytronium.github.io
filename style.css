@@ -67,6 +67,7 @@ header {
 
 #contact-info {
     margin-right: 40%;
+    transition: filter 150ms ease-in-out;
 }
 
 /* Background Animation */
